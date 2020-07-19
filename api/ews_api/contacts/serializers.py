@@ -9,3 +9,4 @@ class ContactSerializer(serializers.ModelSerializer):
         fields = ['student_number', 'name', 'primary_phone', 'secondary_phone',
                   'city', 'country', 'field_or_industry', 'school_or_company',
                   'degree_or_job', 'other_info']
+        read_only_fields = ['student_number', 'name']

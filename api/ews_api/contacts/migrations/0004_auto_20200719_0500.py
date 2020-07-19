@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('contacts', '0003_auto_20200719_0155'),
     ]
@@ -18,6 +17,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='contact',
             name='student_number',
-            field=models.IntegerField(primary_key=True, serialize=False, validators=[django.core.validators.MinValueValidator(20160201), django.core.validators.MaxValueValidator(20160242)]),
+            field=models.IntegerField(primary_key=True, serialize=False,
+                                      validators=[django.core.validators.MinValueValidator(20160201),
+                                                  django.core.validators.MaxValueValidator(20160242)]),
         ),
     ]

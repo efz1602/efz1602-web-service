@@ -43,7 +43,11 @@ class UserCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"error": "Not allowed to register."})
         if password != password_confirm:
             raise serializers.ValidationError({"error": "Passwords don't match."})
+        contact = Contact.objects.get(pk=student_number)
         user = User(username=username)
         user.set_password(password)
         user.save()
+        # TODO: is there an atomicity issue?
+        contact.owner = user
+        contact.save()
         return user

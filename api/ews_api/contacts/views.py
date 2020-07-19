@@ -1,5 +1,5 @@
 # Create your views here.
-from rest_framework import viewsets, generics, mixins
+from rest_framework import viewsets, mixins
 from rest_framework.permissions import IsAuthenticated
 
 from ews_api.contacts.models import Contact
