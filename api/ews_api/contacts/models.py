@@ -11,6 +11,7 @@ from ews_api.users.models import User
 class Contact(models.Model):
     student_number = models.IntegerField(primary_key=True,
                                          validators=[
+                                             # TODO: refactor these out to settings
                                              MinValueValidator(20160200),
                                              MaxValueValidator(20160242),
                                          ])

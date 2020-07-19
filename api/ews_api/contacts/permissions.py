@@ -13,4 +13,5 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
             return True
 
         # Write permissions are only allowed to the owner of the snippet.
+        # TODO: more elegant way to associate obj with user
         return obj.name == request.user.get_username()
